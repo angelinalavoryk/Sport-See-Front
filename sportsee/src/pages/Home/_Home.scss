@@ -1,4 +1,40 @@
-.test-home{
-    background-color: blue;
-    height: 100px;
+.home{
+    display: flex;
+    flex-direction: column;
 }
+
+.id-choice-question{
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.button{
+    display: flex;
+    gap: 50px;
+    
+}
+
+.button-choice{
+    // margin-top: 40px;
+    border: 1px solid rgb(0, 0, 0);
+    width: 94px;
+    height: 55px;
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: white;
+}
+.welcome-div{
+    font-size: 48px;
+}
+
+.welcome{
+    color: black;
+}
+.first-name{
+    color: red;
+}
+
+ 
+
+
+

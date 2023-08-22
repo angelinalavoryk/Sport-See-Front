@@ -1,5 +1,5 @@
+import React from 'react';
 import './_Dashboard.scss';
-
 
 const Dashboard = () => {
   return (
@@ -12,3 +12,9 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+
+
+
+
+
