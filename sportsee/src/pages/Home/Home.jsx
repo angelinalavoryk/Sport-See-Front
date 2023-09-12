@@ -54,12 +54,12 @@ return (
           <div className="line-chart">
           <Linechart userId={userId}/>
           </div>
-          <div className="radar-chart">
-            <Radarchart userId={userId}/>
-          </div>
-          <div className="radial-chart">
-            <Radialchart userId={userId}/>
-          </div>
+        <div className="radar-chart">
+          <Radarchart userId={userId}/>
+        </div>
+        <div className="radial-chart">
+          <Radialchart userId={userId}/>
+        </div>
         </div>
       </div>
     )}

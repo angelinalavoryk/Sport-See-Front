@@ -1,69 +1,56 @@
 
+import React, { useEffect, useState } from 'react';
+import {
+  Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer,
+} from 'recharts';
+import { getUserPerformanceData } from '../../utils/ApiService'; 
 
-import React from 'react';
-import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from 'recharts';
-import './_Radarchart.scss';
+const Radarchart = ({ userId }) => {
+  const [performanceData, setPerformanceData] = useState([]);
 
-const data = [
-    {
-      subject: 'Intensité',
-      A: 120,
-      B: 110,
-      fullMark: 150,
-    },
-    {
-      subject: 'Vitesse',
-      A: 98,
-      B: 130,
-      fullMark: 150,
-    },
-    {
-      subject: 'Force',
-      A: 86,
-      B: 130,
-      fullMark: 150,
-    },
-    {
-      subject: 'Endurance',
-      A: 99,
-      B: 100,
-      fullMark: 150,
-    },
-    {
-      subject: 'Energie',
-      A: 85,
-      B: 90,
-      fullMark: 150,
-    },
-    {
-      subject: 'Cardio',
-      A: 65,
-      B: 85,
-      fullMark: 150,
-    },
-  ];
+  useEffect(() => {
+    getUserPerformanceData(userId)
+      .then((data) => {
+        if (data && data.data) {
+          const translations = {
+            0: 'Cardio',
+            1: 'Énergie',
+            2: 'Endurance',
+            3: 'Force',
+            4: 'Vitesse',
+            5: 'Intensité',
+          };
 
-const Radarchart = () => {
-    return (
-        <ResponsiveContainer width="100%" height="100%">
-          <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-            <PolarGrid />
-            <PolarAngleAxis dataKey="subject" />
-            <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-          </RadarChart>
-        </ResponsiveContainer>
-      );
-  
+          const formattedData = Object.keys(data.data)
+            .map((key) => ({
+              subject: translations[key],
+              value: data.data[key].value,
+            }))
+            .sort((a, b) => getSortOrder(a.subject, b.subject));
+          setPerformanceData(formattedData);
+        }
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la récupération des données de performance", error);
+      });
+  }, [userId]);
+
+  const getSortOrder = (a, b) => {
+    const order = ['Intensité', 'Vitesse', 'Force', 'Endurance', 'Énergie', 'Cardio'];
+    return order.indexOf(a) - order.indexOf(b);
+  };
+
+  return (
+    <div className="radar-chart-container">
+      <ResponsiveContainer width="100%" height={263}>
+        <RadarChart cx="50%" cy="50%" outerRadius="90%" data={performanceData}>
+          <PolarGrid />
+          <PolarAngleAxis dataKey="subject" tick={{ fontSize: 12 }} />
+          <Radar name="Performance" dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+        </RadarChart>
+      </ResponsiveContainer>
+    </div>
+  );
 };
 
 export default Radarchart;
-
-
-
-
-
-
-
-
-
-
