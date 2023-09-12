@@ -109,7 +109,8 @@ const Linechart = ({ userId }) => {
                 allowEscapeViewBox={{ x: true, y: false }}
                 wrapperStyle={{
                   outline: "none",
-                }} content={<CustomTooltip />} 
+                }} 
+                content={<CustomTooltip />} 
               />
 
               <Line

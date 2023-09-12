@@ -42,15 +42,33 @@ const Radarchart = ({ userId }) => {
 
   return (
     <div className="radar-chart-container">
-      <ResponsiveContainer width="100%" height={263}>
-        <RadarChart cx="50%" cy="50%" outerRadius="90%" data={performanceData}>
-          <PolarGrid />
-          <PolarAngleAxis dataKey="subject" tick={{ fontSize: 12 }} />
-          <Radar name="Performance" dataKey="value" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
+        <ResponsiveContainer
+        width="100%" 
+        height={263}
+        >
+        <RadarChart 
+        cx="50%" 
+        cy="50%" 
+        outerRadius="72%" 
+        data={performanceData}
+        >
+        <PolarGrid />
+        <PolarAngleAxis 
+        dataKey="subject" 
+        tick={{ fontSize: 12, fill: 'white' }}
+         />
+        <Radar 
+        name="Performance" 
+        dataKey="value"  
+        fill="#FF0000" 
+        fillOpacity={0.8} 
+        />
         </RadarChart>
-      </ResponsiveContainer>
+        </ResponsiveContainer>
     </div>
   );
 };
+
+
 
 export default Radarchart;

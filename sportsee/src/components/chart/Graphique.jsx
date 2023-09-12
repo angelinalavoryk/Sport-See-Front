@@ -59,6 +59,7 @@ const Example = ({ userId }) => {
         height={400}
         data={mappedData}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+        barGap="8%"
       >
         <Legend 
         verticalAlign="top" 
@@ -69,10 +70,16 @@ const Example = ({ userId }) => {
         fontSize={14}   
         />
         <g>
-            <text x={30} y={20} className="graph-title">Activité quotidienne</text>
-          </g>
+            <text 
+            x={30} 
+            y={20} 
+            className="graph-title"
+            >
+              Activité quotidienne
+              </text>
+        </g>
         <CartesianGrid 
-        strokeDasharray="2" 
+        strokeDasharray="2 " 
         vertical={false} 
         />
         <XAxis 
@@ -81,7 +88,8 @@ const Example = ({ userId }) => {
           tick={{ fill: '#9B9EAC' }}
           stroke="#D8D8D8"
           tickLine={{ display: 'none' }} 
-          padding={{ top: 0, right: -45, left: -45, bottom: 0 }}
+          padding={{ top: 0, right: -42, left: -42, bottom: 0 }}
+          // scale={"point"}
 
           />
 
@@ -106,7 +114,7 @@ const Example = ({ userId }) => {
         <YAxis
           yAxisId="weight"
           orientation="right"
-          tickCount={3}
+          tickCount={4}
           tickFormatter={(value) => `${value}`}
           domain={[weightData[weightData.length - 1], weightData[0]]}
           tick={{ fill: '#9B9EAC' }}

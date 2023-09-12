@@ -21,12 +21,16 @@
     display: none;
   }
 
+  //texte au survole de la souris
   .custom-tooltip{
     background-color: #E60000;
     width: 39px;
     height: 63px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 30px;
   }
   .tooltip-txt{
     font-size: 7px;
