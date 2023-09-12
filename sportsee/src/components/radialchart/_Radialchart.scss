@@ -1,0 +1,36 @@
+.chartgoal-title{
+    font-size: 15px;
+    font-weight: medium;
+    color: #20253A;
+    position: absolute;
+    margin: 24px 0 0 30px;
+  } 
+
+.chartgoal-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;    
+    background-color: white;
+    width: 130px;
+    height: 132px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .percent {
+    font-size: 26px; 
+    margin: 0;
+    font-weight: bold;
+  }
+  .pie-chart-txt{
+    font-size: 16px;
+    margin: 0;
+    color: #74798C;
+    font-weight: medium;
+  }
+ 

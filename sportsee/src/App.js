@@ -6,11 +6,14 @@ import Home from './pages/Home/Home.jsx';
 import Settings from './pages/Settings/Settings.jsx';
 import Community from './pages/community/Community';
 
+
 function App() {
     return (
       <div className="App">
         <NavBar />
+
         <main className="main"> 
+
         <Routes> 
         <Route path="/" element={<Home />} />
         <Route path="/profil" element={<Dashboard />} />

@@ -1,0 +1,66 @@
+.nutrients-section{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 30px;
+    margin-top: 25px;
+}
+
+.bg-nutri{
+    background-color: #FBFBFB;
+    width: 259px;
+    height: 124px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+.bg-img{
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+
+.bg-img-calories{
+    background-color: #ff000034;
+    
+}
+
+.bg-nb-nutri-score{
+    display: flex;
+    flex-direction: column;
+}
+
+.nb {
+    font-size: 20px;
+    color: #282D30;
+    font-weight: bold;
+    margin: 0;
+
+}
+
+.calories-txt{
+    color: #74798C;
+    font: medium;
+    font-size: 14px;
+    margin: 0;
+}
+
+.bg-img-prot{
+    background-color: #4ab7ff70;
+}
+
+.bg-img-glucides{
+    background-color: #fdcd0c7f;
+
+}
+
+.bg-img-lipides{
+    background-color: #fd51826d;
+
+}
