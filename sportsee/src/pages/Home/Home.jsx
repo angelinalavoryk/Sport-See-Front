@@ -43,23 +43,23 @@ return (
     {welcomeMessageVisible && userData && (
       <div className="container">
         <div className="row"> 
-        <div className="garph-container"> 
-        <Example userId={userId} /> 
-        </div>
-        <div className="nutri-container"> 
-        <Nutrients userId={userId}/> 
-        </div>
+          <div className="garph-container"> 
+          <Example userId={userId} /> 
+          </div>
+          <div className="nutri-container"> 
+          <Nutrients userId={userId}/> 
+          </div>
         </div>
         <div className="row-bottom"> 
-        <div className="line-chart">
-        <Linechart userId={userId}/>
-        </div>
-        <div className="radar-chart">
-          <Radarchart userId={userId}/>
-        </div>
-        <div className="radial-chart">
-          <Radialchart userId={userId}/>
-        </div>
+          <div className="line-chart">
+          <Linechart userId={userId}/>
+          </div>
+          <div className="radar-chart">
+            <Radarchart userId={userId}/>
+          </div>
+          <div className="radial-chart">
+            <Radialchart userId={userId}/>
+          </div>
         </div>
       </div>
     )}

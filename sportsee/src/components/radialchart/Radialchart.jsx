@@ -42,8 +42,8 @@ const Radialchart = ({ userId }) => {
             dataKey="value"
             cx="50%"
             cy="50%"
-            innerRadius="70%" //espace entre le % et le cercle
-            outerRadius="80%" //espace entre le % et le cercle
+            innerRadius="52%" //espace entre le % et le cercle
+            outerRadius="60%" //espace entre le % et le cercle
             startAngle={90}
             endAngle={450}
           >

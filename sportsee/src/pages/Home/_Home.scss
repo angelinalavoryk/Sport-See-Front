@@ -1,3 +1,8 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 .home{
     display: flex;
     flex-direction: column;
@@ -13,8 +18,6 @@
     gap: 50px;
     
 }
-
-
 
 .button-choice{
     border: 1px solid rgb(0, 0, 0);
@@ -51,15 +54,12 @@
 }
 
 .row-bottom{
+    width: 835px;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     // gap: 62px;
 }
-
-// .line-chart{
-//     width: 100%;
-//     height: 300px;
-// }
 
 .radar-chart{
     width: 258px;
@@ -68,10 +68,9 @@
 
 .radial-chart{
     width: 258px;
-    height: 200px;
     background-color: #FBFBFB;
     position: relative;
-
+    border-radius: 10px;
 }
 
 .garph-container{
