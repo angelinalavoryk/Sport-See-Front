@@ -28,14 +28,6 @@ export const getUserAverageSessions = (userId) => {
 };
 
 
-// export const getUserPerformanceData = (userId) => {
-//   return axios.get(`${BASE_URL}/user/${userId}/performance`)
-//     .then((response) => response.data.data.performanceData)
-//     .catch(() => {
-//       throw new Error("Données de performance introuvables pour cet utilisateur.");
-//     });
-// };
-
 export const getUserPerformanceData = (userId) => {
   return axios.get(`${BASE_URL}/user/${userId}/performance`)
     .then((response) => response.data.data)

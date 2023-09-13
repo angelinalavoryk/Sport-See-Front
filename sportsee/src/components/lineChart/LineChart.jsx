@@ -49,7 +49,6 @@ const Linechart = ({ userId }) => {
       />
     );
   };
-
   return (
     <>
       <div className='bg-graphique-line'>
