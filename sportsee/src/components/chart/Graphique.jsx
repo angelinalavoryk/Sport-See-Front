@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis,CartesianGrid , Tooltip, Legend, ResponsiveContainer} from 'recharts';
-import { getUserActivityData } from '../../utils/ApiService.jsx';
+import { getUserActivityData } from '../../utils/ApiService.js';
 import './_Graphique.scss';
 
 const formatDay = (day) => {
@@ -60,6 +60,8 @@ const Example = ({ userId }) => {
         data={mappedData}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
         barGap="8%"
+        className="chart-container"
+
       >
         <Legend 
         verticalAlign="top" 
@@ -89,8 +91,6 @@ const Example = ({ userId }) => {
           stroke="#D8D8D8"
           tickLine={{ display: 'none' }} 
           padding={{ top: 0, right: -42, left: -42, bottom: 0 }}
-          // scale={"point"}
-
           />
 
         <YAxis className="hidden-y-axis"/>

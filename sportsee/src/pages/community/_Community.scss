@@ -1,4 +1,11 @@
 .test-community{
-    background-color: violet;
-    height: 100px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+.test-community-test{
+    margin: 0;
 }

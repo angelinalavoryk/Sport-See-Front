@@ -33,4 +33,13 @@
     color: #74798C;
     font-weight: medium;
   }
+
+
+  @media screen and (max-width: 1024px) {
+  .chartgoal-label {
+      width: 105px;
+      height: 105px;
+    }
+
+  }
  

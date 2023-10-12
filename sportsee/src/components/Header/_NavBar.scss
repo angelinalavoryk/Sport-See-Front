@@ -7,7 +7,6 @@
   .vertical-nav {
     width: 117px;
     height: 1024px;
-    // height: 100%;
     background-color: black;
     color: white;
     display: flex;
@@ -82,6 +81,11 @@
 
 
 
-  
+@media screen and (max-width: 1024px) {
+  .vertical-nav {
+    height: 780px;
+  }
+
+}
   
   

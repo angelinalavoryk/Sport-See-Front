@@ -35,8 +35,11 @@ return (
     )}
     {welcomeMessageVisible && userData && (
       <div className="welcome-div"> 
-        <span className="welcome">Bonjour, </span> <span className="first-name">{userData.userInfos.firstName}</span>
-        <br /><span className="congradulation">Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
+      <div> 
+        <span className="welcome">Bonjour, </span> 
+        <span className="first-name">{userData.userInfos.firstName}</span>
+        </div>
+        <span className="congradulation">Félicitation ! Vous avez explosé vos objectifs hier 👏</span>
       </div>
     )}
 

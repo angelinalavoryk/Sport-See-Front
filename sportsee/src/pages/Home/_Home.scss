@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 77px;
 }
 .home{
     display: flex;
@@ -29,6 +30,8 @@
 }
 .welcome-div{
     font-size: 48px;
+    display: flex;
+    flex-direction: column;
 }
 
 .welcome{
@@ -79,13 +82,51 @@
     background-color: #FBFBFB;
     width: 835px;
     height: 340px;
+    border-radius: 10px;
 }
 
 
 
 
 
+@media screen and (max-width: 1024px) {
+    .container{
+        margin-top: 4px;
+    }
 
+    .welcome{
+        font-size: 30px;
+    }
+    .first-name{
+        font-size: 30px;
+    }
+
+    .line-chart{
+        width: 210px;
+    }
+
+    .radar-chart{
+        width: 210px;
+    }
+
+    .radial-chart{
+        width: 210px;
+    }
+
+    .row-bottom{
+        justify-content:flex-start;
+        gap: 15px;
+    }
+
+    .garph-container{
+        width: 685px;
+        height: 320px;
+    }
+
+    .row{
+        height: 325px;
+    }
+  }
 
 
  

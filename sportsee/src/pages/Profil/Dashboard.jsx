@@ -1,14 +1,15 @@
 import React from 'react';
 import './_Dashboard.scss';
-import Linechart from '../../components/lineChart/LineChart';
+
 
 
 
 const Dashboard = () => {
   return (
     <div className='dashboard'>
-        <div className='test'>
-          <Linechart/>
+         <div className='test-community'> 
+        <p className='test-community-test'>La page est actuellement en construction et sera bientôt disponible.</p> 
+        <p className='test-community-test'>Merci de votre patience</p> 
         </div>
     </div>
   );

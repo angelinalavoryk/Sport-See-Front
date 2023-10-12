@@ -69,6 +69,4 @@ const Radarchart = ({ userId }) => {
   );
 };
 
-
-
 export default Radarchart;

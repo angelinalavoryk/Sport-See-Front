@@ -9,9 +9,19 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+
 .main{
-  padding-left: 162px;
+  padding-left: 200px;
   padding-top: 50px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .main{
+  padding-left: 142px;
+  padding-top: 0px;
+}
+
 }
 
 
