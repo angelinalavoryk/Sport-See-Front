@@ -9,25 +9,52 @@
     flex-direction: column;
 }
 
+.welcome-choice-div{
+    width: 350px;
+    text-align: justify;
+}
+
 .id-choice-question{
     font-size: 28px;
     font-weight: 500;
 }
 
-.button{
-    display: flex;
-    gap: 50px;
-    
+.id-choice-question-h2{
+    font-size: 16px;
+    font-weight: 400;
 }
 
-.button-choice{
-    border: 1px solid rgb(0, 0, 0);
-    width: 94px;
-    height: 55px;
-    border-radius: 15px;
-    cursor: pointer;
-    background-color: white;
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;  
+    text-align: center;  
+    align-items: center;
+
 }
+
+.button-choice {
+    width: 170px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-choice:hover {
+    background-color: rgb(228, 228, 228);
+    color: rgb(255, 0, 0);
+}
+
+.button-choice:active {
+    transform: translateY(3px); 
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); 
+}
+
 .welcome-div{
     font-size: 48px;
     display: flex;
@@ -61,7 +88,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    // gap: 62px;
 }
 
 .radar-chart{
@@ -90,6 +116,8 @@
 
 
 @media screen and (max-width: 1024px) {
+   
+
     .container{
         margin-top: 4px;
     }

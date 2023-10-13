@@ -1,11 +1,11 @@
-
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, ResponsiveContainer } from 'recharts';
-import { getUserData } from '../../utils/ApiService'; 
+import { getUserData } from '../../services/ApiService'; 
 import './_Radialchart.scss';
 
 const Radialchart = ({ userId }) => {
   const [userData, setUserData] = useState(null);
+  const [loadingError, setLoadingError] = useState(null); 
 
   useEffect(() => {
     getUserData(userId)
@@ -14,8 +14,13 @@ const Radialchart = ({ userId }) => {
       })
       .catch((error) => {
         console.error('Erreur lors de la récupération des données utilisateur', error);
+        setLoadingError("Erreur lors du chargement.Les données d'activité sont introuvables pour cet utilisateur."); 
       });
   }, [userId]);
+
+  if (loadingError) {
+    return <div>Erreur lors du chargement des données. Veuillez réessayer.</div>; 
+  }
 
   if (!userData) {
     return <div>Chargement en cours...</div>;
@@ -67,6 +72,7 @@ const Radialchart = ({ userId }) => {
 };
 
 export default Radialchart;
+
 
 
 

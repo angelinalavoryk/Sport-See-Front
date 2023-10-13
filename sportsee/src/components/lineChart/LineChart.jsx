@@ -2,12 +2,14 @@
 import React, { useEffect, useState } from 'react';
 import {LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Rectangle} from 'recharts';
 import './_LineChart.scss';
-import { getUserAverageSessions } from '../../utils/ApiService';
+import { getUserAverageSessions } from '../../services/ApiService';
 
 
 const Linechart = ({ userId }) => {
   const [averageSessions, setAverageSessions] = useState([]);
   const daysOfWeek = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+  const [loadingError, setLoadingError] = useState(null); 
+
 
   useEffect(() => {
     getUserAverageSessions(userId)
@@ -16,6 +18,7 @@ const Linechart = ({ userId }) => {
       })
       .catch((error) => {
         console.error("Erreur lors de la récupération des données de durée moyenne de séance", error);
+        setLoadingError("Erreur lors du chargement.Les données d'activité sont introuvables pour cet utilisateur.");
       });
   }, [userId]);
 
@@ -52,6 +55,11 @@ const Linechart = ({ userId }) => {
   return (
     <>
       <div className='bg-graphique-line'>
+      {loadingError ? ( 
+        <div className="error-message">
+          <p className='loadingError line'>{loadingError}</p>
+        </div>
+      ) : (
         <ResponsiveContainer 
           width="100%" 
           height={263} 
@@ -126,6 +134,7 @@ const Linechart = ({ userId }) => {
               />
             </LineChart>
         </ResponsiveContainer>
+      )}
       </div>
     </>
   );

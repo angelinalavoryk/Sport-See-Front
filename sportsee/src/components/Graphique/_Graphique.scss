@@ -32,6 +32,18 @@
     color: white;
   }
 
+  //message erreur quand les données sont pas chargé
+  .error-message{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .loadingError{
+    margin: 50px;
+    font-size: 18px;
+  }
+
  
   @media screen and (max-width: 1024px) {
     .bg{

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart, Bar, XAxis, YAxis,CartesianGrid , Tooltip, Legend, ResponsiveContainer} from 'recharts';
-import { getUserActivityData } from '../../utils/ApiService.js';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { getUserActivityData } from '../../services/ApiService.js';
 import './_Graphique.scss';
 
 const formatDay = (day) => {
@@ -9,26 +9,27 @@ const formatDay = (day) => {
 };
 
 const CustomTooltip = ({ active, payload }) => {
-    if (active && payload && payload.length) {
-      const kilogram = payload[0].payload.kilogram;
-      const calories = payload[0].payload.calories;
-      return (
-        <div className="custom-tooltip">
-            <div> 
+  if (active && payload && payload.length) {
+    const kilogram = payload[0].payload.kilogram;
+    const calories = payload[0].payload.calories;
+    return (
+      <div className="custom-tooltip">
+        <div>
           <p className="tooltip-txt">{kilogram}kg</p>
-          </div>
-          <div> 
-          <p className="tooltip-txt">{calories}Kcla</p>
-          </div>
         </div>
-      );
-    }
-    return null;
-  };
+        <div>
+          <p className="tooltip-txt">{calories}Kcla</p>
+        </div>
+      </div>
+    );
+  }
+  return null;
+};
 
-const Example = ({ userId }) => {
+const Graphique = ({ userId }) => {
   const [activityData, setActivityData] = useState([]);
   const [weightData, setWeightData] = useState([]);
+  const [loadingError, setLoadingError] = useState(null); 
 
   useEffect(() => {
     getUserActivityData(userId)
@@ -39,6 +40,7 @@ const Example = ({ userId }) => {
       })
       .catch((error) => {
         console.error("Erreur lors de la récupération des données d'activité", error);
+        setLoadingError("Erreur lors du chargement.Les données d'activité sont introuvables pour cet utilisateur.");
       });
   }, [userId]);
 
@@ -49,21 +51,22 @@ const Example = ({ userId }) => {
   }));
 
   return (
-    <div className='bg'> 
-    <ResponsiveContainer 
-    width="100%" 
-    height={320}
-    >
-      <BarChart
-        width={500}
-        height={400}
-        data={mappedData}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-        barGap="8%"
-        className="chart-container"
-
-      >
-        <Legend 
+    <div className='bg'>
+      {loadingError ? ( 
+        <div className="error-message">
+          <p className='loadingError'>{loadingError}</p>
+        </div>
+      ) : (
+        <ResponsiveContainer width="100%" height={320}>
+          <BarChart
+            width={500}
+            height={400}
+            data={mappedData}
+            margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+            barGap="8%"
+            className="chart-container"
+          >
+             <Legend 
         verticalAlign="top" 
         height={36} 
         iconType={"circle"} 
@@ -120,10 +123,14 @@ const Example = ({ userId }) => {
           tick={{ fill: '#9B9EAC' }}
           stroke="white"
         />
-      </BarChart>
-    </ResponsiveContainer>
+
+            
+            
+          </BarChart>
+        </ResponsiveContainer>
+      )}
     </div>
   );
 };
 
-export default Example;
+export default Graphique;
