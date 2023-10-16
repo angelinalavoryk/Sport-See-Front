@@ -3,11 +3,15 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import { getUserActivityData } from '../../services/ApiService.js';
 import './_Graphique.scss';
 
+
+
+
 const formatDay = (day) => {
   const dayNumber = parseInt(day.substring(day.length - 2), 10);
   return dayNumber.toString();
 };
 
+//affiche les infos au survoel de la souris kg et calories
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     const kilogram = payload[0].payload.kilogram;
@@ -26,6 +30,7 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+//les barres du graphiques
 const Graphique = ({ userId }) => {
   const [activityData, setActivityData] = useState([]);
   const [weightData, setWeightData] = useState([]);
@@ -52,6 +57,7 @@ const Graphique = ({ userId }) => {
 
   return (
     <div className='bg'>
+      {/* si loadingError est vrai afficher message erreur, sinon afficher le graphique */}
       {loadingError ? ( 
         <div className="error-message">
           <p className='loadingError'>{loadingError}</p>
@@ -66,13 +72,14 @@ const Graphique = ({ userId }) => {
             barGap="8%"
             className="chart-container"
           >
-             <Legend 
-        verticalAlign="top" 
-        height={36} 
-        iconType={"circle"} 
-        align={"right"} 
-        iconSize={8} 
-        fontSize={14}   
+            {/* signification des couleurs */}
+          <Legend 
+            verticalAlign="top" 
+            height={36} 
+            iconType={"circle"} 
+            align={"right"} 
+            iconSize={8} 
+            fontSize={14}   
         />
         <g>
             <text 
@@ -83,49 +90,53 @@ const Graphique = ({ userId }) => {
               Activité quotidienne
               </text>
         </g>
+        {/* grille arrière plan */}
         <CartesianGrid 
-        strokeDasharray="2 " 
-        vertical={false} 
+             strokeDasharray="2 " 
+            vertical={false} 
         />
+        {/* barre horizontal des jours */}
         <XAxis 
-          dataKey="day" 
-          tickFormatter={formatDay} 
-          tick={{ fill: '#9B9EAC' }}
-          stroke="#D8D8D8"
-          tickLine={{ display: 'none' }} 
-          padding={{ top: 0, right: -42, left: -42, bottom: 0 }}
+            dataKey="day" 
+            tickFormatter={formatDay} 
+            tick={{ fill: '#9B9EAC' }}
+            stroke="#D8D8D8"
+            tickLine={{ display: 'none' }} 
+            padding={{ top: 0, right: -42, left: -42, bottom: 0 }}
           />
-
+        {/* barre verticale caché */}
         <YAxis className="hidden-y-axis"/>
+
+        {/* infos au survol */}
         <Tooltip content={<CustomTooltip />} />
+
+        {/* les barres du graphique kg et calories */}
         <Bar 
-        dataKey="kilogram" 
-        name="Poids (kg)" 
-        fill="#282D30"  
-        barSize={7} 
-        className="custom-bar kilogram-bar" 
-        radius={[5, 10, 0, 0]}
+            dataKey="kilogram" 
+            name="Poids (kg)" 
+            fill="#282D30"  
+            barSize={7} 
+            className="custom-bar kilogram-bar" 
+            radius={[5, 10, 0, 0]}
         /> 
         <Bar 
-        dataKey="calories" 
-        name="Calories Brûlées (kCla)" 
-        fill="#E60000" 
-        barSize={7} 
-        className="custom-bar calories-bar" 
-        radius={[5, 10, 0, 0]}
+            dataKey="calories" 
+            name="Calories Brûlées (kCla)" 
+            fill="#E60000" 
+            barSize={7} 
+            className="custom-bar calories-bar" 
+            radius={[5, 10, 0, 0]}
         />
+        {/* barre de droite avce poids plus haut et plus bas */}
         <YAxis
-          yAxisId="weight"
-          orientation="right"
-          tickCount={4}
-          tickFormatter={(value) => `${value}`}
-          domain={[weightData[weightData.length - 1], weightData[0]]}
-          tick={{ fill: '#9B9EAC' }}
-          stroke="white"
+            yAxisId="weight"
+            orientation="right"
+            tickCount={4}
+            tickFormatter={(value) => `${value}`}
+            domain={[weightData[weightData.length - 1], weightData[0]]}
+            tick={{ fill: '#9B9EAC' }}
+            stroke="white"
         />
-
-            
-            
           </BarChart>
         </ResponsiveContainer>
       )}
