@@ -92,7 +92,7 @@ const Graphique = ({ userId }) => {
         </g>
         {/* grille arrière plan */}
         <CartesianGrid 
-             strokeDasharray="2 " 
+            strokeDasharray="2 " 
             vertical={false} 
         />
         {/* barre horizontal des jours */}
