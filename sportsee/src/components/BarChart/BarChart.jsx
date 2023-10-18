@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { BarChart, Bar, XAxis,  YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { getUserActivityData } from '../../services/ApiService.js';
 import './_BarChart.scss';
 
@@ -56,6 +56,7 @@ const Graphique = ({ userId }) => {
           <p className='loadingError'>{loadingError}</p>
         </div>
       ) : (
+        
         <ResponsiveContainer width="100%" height={320}>
           <BarChart
             width={500}
@@ -73,7 +74,7 @@ const Graphique = ({ userId }) => {
               iconSize={8} 
               fontSize={14}
             />
-            <g className='g'>
+            <g className='g' style={{ marginLeft: '80px' }}>
               <text 
                 x={30} 
                 y={20} 
