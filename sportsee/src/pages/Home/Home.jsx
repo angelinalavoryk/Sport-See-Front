@@ -16,6 +16,7 @@ function Home() {
   const [loadingError, setLoadingError] = useState(null); //gérer les erreurs de chargement
   const location = useLocation();
 
+  //récupération donnée utilisateur
   useEffect(() => {
     getUserData(userId)
       .then((data) => {
@@ -28,6 +29,7 @@ function Home() {
       });
   }, [userId]);
 
+  //changement de l'url
   useEffect(() => {
     // Vérifier si la location change et réinitialiser le choix de l'utilisateur si nécessaire
     if (location.pathname === "/" && welcomeMessageVisible) {
@@ -35,6 +37,7 @@ function Home() {
     }
   }, [location, welcomeMessageVisible]);
 
+  //sélectionne d'un autre utilisateur et met à jour id
   const handleUserClick = (id) => {
     setUserId(id);
     setWelcomeMessageVisible(true);

@@ -7,7 +7,7 @@ import { getUserAverageSessions } from '../../services/ApiService';
 
 const Linechart = ({ userId }) => {
   const [averageSessions, setAverageSessions] = useState([]);
-  const daysOfWeek = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+  const daysOfWeek = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];//tableau pour mapper des jours de semaines
   const [loadingError, setLoadingError] = useState(null); 
 
 
@@ -69,7 +69,8 @@ const Linechart = ({ userId }) => {
               data={chartData}
               pointerEvents="auto"
               >
-                <svg 
+                {/* dégradé de couleur de la ligne */}
+              <svg 
                   width="0" 
                   height="0"
                   >
@@ -80,7 +81,8 @@ const Linechart = ({ userId }) => {
                     <stop offset="60%" stopColor="rgba(255, 255, 255, 0.6)" />
                     <stop offset="100%" stopColor="rgba(255, 255, 255, 1)" />
                   </linearGradient>
-                </svg>
+              </svg>
+              {/* titre */}
                 <g>
                   <text 
                   x={32} 
@@ -110,10 +112,11 @@ const Linechart = ({ userId }) => {
                 hide 
                 domain={['dataMin-10', 'dataMax+25']} 
               />
+              {/* infos survol */}
               <Tooltip 
                 cursor={<CustomCursor width={500} height={500} />}
                 offset={0}
-                allowEscapeViewBox={{ x: true, y: false }}
+                // allowEscapeViewBox={{ x: true, y: false }}
                 wrapperStyle={{
                   outline: "none",
                 }} 

@@ -49,11 +49,17 @@ const Graphique = ({ userId }) => {
       });
   }, [userId]);
 
+
+
+//formatage des doonées
   const mappedData = activityData.map((session) => ({
     day: formatDay(session.day),
     kilogram: session.kilogram,
     calories: session.calories,
   }));
+
+
+
 
   return (
     <div className='bg'>
