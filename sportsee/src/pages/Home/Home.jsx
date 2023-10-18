@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link, useLocation } from "react-router-dom";
 import { getUserData } from "../../services/ApiService";
-import Graphique from '../../components/Graphique/Graphique.jsx'; 
+import Graphique from '../../components/BarChart/BarChart.jsx'; 
 import Nutrients from "../../components/nutrients/Nutrients.jsx";
 import Linechart from "../../components/lineChart/LineChart";
 import Radarchart from "../../components/radarChart/Radarchart";

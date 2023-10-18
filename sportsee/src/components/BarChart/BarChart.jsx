@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { getUserActivityData } from '../../services/ApiService.js';
-import './_Graphique.scss';
+import './_BarChart.scss';
 
 
 const formatDay = (day) => {
@@ -61,7 +61,7 @@ const Graphique = ({ userId }) => {
             width={500}
             height={400}
             data={mappedData}
-            margin={{ top: 5, right: 50, left: 10, bottom: 20 }}
+            margin={{ top: 5, right: 50, left: -20, bottom: 20 }}
             barGap="8%"
             className="chart-container"
           >
