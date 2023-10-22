@@ -1,13 +1,13 @@
 import React from 'react';
-import './_Dashboard.scss';
+import './_Profil.scss';
 
 
 
 
-const Dashboard = () => {
+const Profil = () => {
   return (
-    <div className='dashboard'>
-         <div className='test-community'> 
+    <div className='profil'>
+       <div className='test-community'> 
         <p className='test-community-test'>La page est actuellement en construction et sera bientôt disponible.</p> 
         <p className='test-community-test'>Merci de votre patience</p> 
         </div>
@@ -15,7 +15,14 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Profil;
+
+
+
+
+
+
+
 
 
 

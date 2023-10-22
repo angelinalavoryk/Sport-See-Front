@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import './App.css';
 import NavBar from './components/NavBar/NavBar.jsx';
 import Home from './pages/Home/Home.jsx';
-import Dashboard from './pages/Dashboard/Dashboard.jsx';
+import Profil from './pages/Profil/Profil.jsx';
 import Settings from './pages/Settings/Settings.jsx';
 import Community from './pages/community/Community';
 
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/user/:userId" element={<Home />} />
-          <Route path="/profil" element={<Dashboard />} />
+          <Route path="/profil" element={<Profil />} />
         <Route path="/reglages" element={<Settings />} />
          <Route path="/communaute" element={<Community />} />
         </Routes>
@@ -22,7 +22,6 @@ function App() {
     </div>
   );
 }
-
 export default App;
 
 

@@ -1,0 +1,177 @@
+// .test{
+//     height: 200px;
+// }
+
+// .test-commmunity{
+//     width: 1200px;
+//     color: red;
+// }
+
+
+
+// .dashboard-name{
+//     font-size: 150px;
+//     color: black;
+// }
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 77px;
+}
+.home{
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-choice-div{
+    width: 350px;
+    text-align: justify;
+}
+
+.id-choice-question{
+    font-size: 28px;
+    font-weight: 500;
+}
+
+.id-choice-question-h2{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 50px;  
+    text-align: center;  
+    align-items: center;
+
+}
+
+.button-choice {
+    width: 170px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.button-choice:hover {
+    background-color: rgb(228, 228, 228);
+    color: rgb(255, 0, 0);
+}
+
+.button-choice:active {
+    transform: translateY(3px); 
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.welcome-div{
+    font-size: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome{
+    color: black;
+}
+.first-name{
+    color: red;
+}
+
+.congradulation{
+    font-size: 18px;
+    margin-top: 40px;
+}
+
+.line-chart{
+    width: 258px;
+    height: 263px;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    height: 350px;
+}
+
+.row-bottom{
+    width: 835px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.radar-chart{
+    width: 258px;
+    height: 263px;
+    background-color: #282D30;
+    border-radius: 10px;
+}
+
+.radial-chart{
+    width: 258px;
+    background-color: #FBFBFB;
+    position: relative;
+    border-radius: 10px;
+}
+
+.garph-container{
+    background-color: #FBFBFB;
+    width: 835px;
+    height: 340px;
+    border-radius: 10px;
+}
+
+
+
+
+
+@media screen and (max-width: 1024px) {
+    .container{
+        margin-top: 4px;
+    }
+
+    .welcome{
+        font-size: 30px;
+    }
+    .first-name{
+        font-size: 30px;
+    }
+
+    .congradulation{
+        margin-top: 0;
+    }
+
+    .line-chart{
+        width: 210px;
+    }
+
+    .radar-chart{
+        width: 210px;
+    }
+
+    .radial-chart{
+        width: 210px;
+    }
+
+    .row-bottom{
+        justify-content:flex-start;
+        gap: 15px;
+    }
+
+    .garph-container{
+        width: 685px;
+        height: 320px;
+    }
+
+    .row{
+        height: 325px;
+    }
+  }
