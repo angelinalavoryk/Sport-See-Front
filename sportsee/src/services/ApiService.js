@@ -5,7 +5,7 @@ import axios from "axios";
 const BASE_URL = "http://localhost:3000";
 const isMocked = sessionStorage.getItem("mock") === "true";
 
-
+//donnnées utilisateur
 export const getUserData = (userId) => {
   if(isMocked){
     return Promise.resolve(MOCK_USER_DATA);
@@ -16,7 +16,6 @@ export const getUserData = (userId) => {
       throw new Error("Erreur lors de la récupération des données utilisateur", error);
     });
 };
-
 
 export const getUserActivityData = (userId) => {
   if(isMocked){

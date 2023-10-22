@@ -28,6 +28,7 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const Graphique = ({ activityData }) => {
+  
   return (
     <div className='bg'>
       <ResponsiveContainer width="100%" height={320}>
@@ -103,6 +104,7 @@ const Graphique = ({ activityData }) => {
             yAxisId="caloriesAxis"
           />
         </BarChart>
+
       </ResponsiveContainer>
     </div>
   );

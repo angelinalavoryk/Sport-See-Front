@@ -6,9 +6,6 @@ import './_Radialchart.scss';
       
 
 const Radialchart = ({ radialChartData }) => {
-  if (!radialChartData) {
-    return <div>Chargement en cours...</div>;
-  }  
   const { todayScorePercentage, remainingPercentage } = radialChartData;
 
   const chartData = [
