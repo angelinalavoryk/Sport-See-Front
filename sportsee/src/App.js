@@ -5,6 +5,7 @@ import Home from './pages/Home/Home.jsx';
 import Profil from './pages/Profil/Profil.jsx';
 import Settings from './pages/Settings/Settings.jsx';
 import Community from './pages/community/Community';
+import ErrorPage from "./pages/ErrorPage/ErrorPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/profil" element={<Profil />} />
         <Route path="/reglages" element={<Settings />} />
          <Route path="/communaute" element={<Community />} />
+         <Route path="*" element={<ErrorPage />} />
         </Routes>
       </main>
     </div>
