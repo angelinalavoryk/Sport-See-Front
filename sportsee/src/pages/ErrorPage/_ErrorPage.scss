@@ -1,5 +1,5 @@
 .error404{
-    font-size: 20rem;
+    font-size: 22rem;
     font-weight: 800;
     padding: 0;
     margin: 0;
@@ -8,7 +8,16 @@
 
 .page-not-found{
     font-size: 3.5rem;
-    font-weight: 500;
+    font-weight: 600;
+    color: rgb(109, 109, 109);
+    padding: 0;
+    margin: 0;
+}
+
+.page-not-found-txt{
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: rgb(109, 109, 109);
     padding: 0;
     margin: 0;
 }

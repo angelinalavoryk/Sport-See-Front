@@ -16,9 +16,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/user/:userId" element={<Home />} />
           <Route path="/profil" element={<Profil />} />
-        <Route path="/reglages" element={<Settings />} />
-         <Route path="/communaute" element={<Community />} />
-         <Route path="*" element={<ErrorPage />} />
+          <Route path="/reglages" element={<Settings />} />
+          <Route path="/communaute" element={<Community />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </main>
     </div>

@@ -8,7 +8,7 @@ const Profil = () => {
   return (
     <div className='profil'>
        <div className='test-community'> 
-        <p className='test-community-test'>La page est actuellement en construction et sera bientôt disponible.</p> 
+        <p className='test-community-test'>La page "Profil" est actuellement en construction et sera bientôt disponible.</p> 
         <p className='test-community-test'>Merci de votre patience</p> 
         </div>
     </div>

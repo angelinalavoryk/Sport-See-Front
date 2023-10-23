@@ -47,8 +47,6 @@ function Home() {
         console.error("Erreur lors de la récupération des données utilisateur", error);
         setNutrientLoadingError("Probleme de récupération des données. ");
         setRadialChartLoadingError("Probleme de récupération des données. ");
-
-
       });
   }, [userId]);
 
