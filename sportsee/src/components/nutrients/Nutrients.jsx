@@ -7,7 +7,6 @@ import cheeseburger from '../../assets/cheeseburger.svg'
 const Nutrients = ({ nutrientData }) => {
   return (
     <section className="nutrients-section">
-      {nutrientData && (
         <>
           <div className='bg-nutri'>
             <div className='bg-img bg-img-calories'>
@@ -49,7 +48,6 @@ const Nutrients = ({ nutrientData }) => {
             </div>
           </div>
           </>
-      )}
     </section>
   );
 };

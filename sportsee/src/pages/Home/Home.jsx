@@ -106,13 +106,11 @@ function Home() {
       setWelcomeMessageVisible(false);
     }
   }, [location, welcomeMessageVisible]);
-
   const handleUserClick = (id) => {
     setUserId(id);
     setWelcomeMessageVisible(true);
     localStorage.setItem("selectedUserId", id.toString()); // Stocke l'ID dans localStorage
   };
-
   const shouldShowWelcomeMessage =
     welcomeMessageVisible || location.pathname !== "/" || paramUserId;
     
