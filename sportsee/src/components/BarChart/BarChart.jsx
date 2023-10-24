@@ -74,7 +74,6 @@ const Barchart = ({ activityData }) => {
             yAxisId="kilogramAxis" 
             orientation="right"
             tickCount={4}
-            tickFormatter={(value) => `${value}`}
             domain={['dataMin - 2', 'dataMax + 1']} 
             tick={{ fill: '#9B9EAC' }} 
             stroke="white" 

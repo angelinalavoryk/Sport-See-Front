@@ -14,7 +14,7 @@ import "./_Home.scss";
 
 function Home() {
   const { userId: paramUserId } = useParams(); // Récupère l'ID de l'URL
-  const [userId, setUserId] = useState(paramUserId || localStorage.getItem("selectedUserId"));
+  const [userId, setUserId] = useState(paramUserId);
   const [userData, setUserData] = useState(null);
   const [activityData, setActivityData] = useState([]);
   const [averageSessionsData, setAverageSessions] = useState([]);
@@ -34,14 +34,11 @@ function Home() {
     getUserData(userId)
       .then((userData) => {
         setUserData(userData);
-        setNutrientData(
-          userData.keyData
-        );
+        setNutrientData(userData.keyData);
         setRadialChartData({
           todayScorePercentage: userData.todayScore * 100,
           remainingPercentage: 100 - (userData.todayScore * 100)
         });
-        
       })
       .catch((error) => {
         console.error("Erreur lors de la récupération des données utilisateur", error);
