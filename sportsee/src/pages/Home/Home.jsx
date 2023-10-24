@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
 import { getUserData, getUserActivityData, getUserAverageSessions, getUserPerformanceData } from "../../services/ApiService";
-import Graphique from "../../components/BarChart/BarChart.jsx";
+import Barchart from "../../components/BarChart/BarChart.jsx";
 import Nutrients from "../../components/nutrients/Nutrients.jsx";
 import Linechart from "../../components/lineChart/LineChart";
 import Radarchart from "../../components/radarChart/Radarchart";
@@ -14,7 +14,7 @@ import "./_Home.scss";
 
 function Home() {
   const { userId: paramUserId } = useParams(); // Récupère l'ID de l'URL
-  const [userId, setUserId] = useState(paramUserId || localStorage.getItem("selectedUserId") || 12);
+  const [userId, setUserId] = useState(paramUserId || localStorage.getItem("selectedUserId"));
   const [userData, setUserData] = useState(null);
   const [activityData, setActivityData] = useState([]);
   const [averageSessionsData, setAverageSessions] = useState([]);
@@ -141,7 +141,7 @@ function Home() {
               {activityLoadingError ? (
                   <div>{activityLoadingError}</div>
                 ) : (
-                <Graphique activityData={activityData} />
+                <Barchart activityData={activityData} />
                 )}
               </div>
               <div className="nutri-container">

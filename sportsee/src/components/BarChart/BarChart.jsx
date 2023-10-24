@@ -27,7 +27,7 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
-const Graphique = ({ activityData }) => {
+const Barchart = ({ activityData }) => {
   
   return (
     <div className='bg'>
@@ -110,4 +110,4 @@ const Graphique = ({ activityData }) => {
   );
 };
 
-export default Graphique;
+export default Barchart;

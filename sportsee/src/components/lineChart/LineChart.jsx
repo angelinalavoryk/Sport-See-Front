@@ -22,6 +22,7 @@ const Linechart = ({ averageSession }) => {
     const { x } = points[0];
     return (
       <Rectangle
+        className="custom-cursor"
         fill="rgba(0,0,0,0.3)"
         stroke="none"
         x={x}
